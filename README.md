@@ -1,20 +1,57 @@
-# Scripts
+# 脚本
 一些实用小脚本的集合，不定期更新～
-### 下载telegram频道中的图片
-- 链接：[download-telegram-channel-pictures.py](./download-telegram-channel-pictures.py)
 
-- 环境: python3
-- 依赖: Telethon,PySocks(如果需要通过代理连接到telegram的话)
-- 使用方法: 
-1. 在[my.telegram.org/apps](https://my.telegram.org/apps)拿到你的api-id以及api-hash
-2.  将一些变量替换成你需要的值
-3.  运行
-- 注意事项：首次运行脚本需要输入tg所绑定的手机号和验证码，然后telethon才能以你的身份登录去下载图片
-- 其他说明：[关于Telethon的文档在这里](https://telethon.readthedocs.io/en/latest/index.html)
+## 下载Telegram频道中的图片
 
-### 删除指定文件夹下的重复文件
+2019年5月21日：更新了断点续传功能，再也不用担心电脑断网、断电了。
+
+### 依赖
+`Python3.x`  
+`Telethon`  
+`PySocks`  
+
+### 使用方法
+
+需要依次安装 
+`[Python3.x]`(https://www.python.org/) 
+`[Telethon]`(https://github.com/LonamiWebs/Telethon) 
+`[PySocks]`(https://github.com/Anorov/PySocks)
+<br/>
+1. 打开 `download-telegram-channel-pictures.py` 修改以下代码  
+``` Python
+api_id = 123456 #api_id
+api_hash = "af042a39824c6" #api_hash
+channel_link = "https://t.me/xx" #你所想下载的频道链接 https://t.me/ 开头
+```
+
+``` bash
+你可以从 https://my.telegram.org/apps 获得你的 api_id 和 api_hash 
+在你第一次运行这个脚本的时候,
+你需要提供你的手机号码（+86 15512348888）去登录你的Telegram账号。(因为这需要使用 Telethon)
+```
+
+2. 根据需要选择修改 以下代码  如果你在国内使用SSR 选择第一个 如果你在国外则选择第二个 
+``` Python
+proxy = (socks.SOCKS5, '127.0.0.1', 1080)
+#proxy = None
+```
+
+3. 找个位置开启命令行
+`git clone https://github.com/Jxh98/scripts`
+`python ./download-telegram-channel-pictures.py`
+
+4. 输入手机号码  例子 `+86 15512348888`
+输入Telegram中的验证码  例子 `12345`
+
+`喝杯咖啡等待一下吧！`
+
+### 其他说明：
+[关于Telethon的文档在这里](https://telethon.readthedocs.io/en/latest/index.html)
+
+
+## 删除指定文件夹下的重复文件
 - 链接：[delete-duplicate-files.rb](./delete-duplicate-files.rb)
 - 环境：ruby2.6.2
 - 使用方法：将文件中“指定文件夹”替换为需要的值，然后```ruby delete-duplicate-files.rb```运行。
 
-### 待更新……
+## 待更新……
